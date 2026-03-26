@@ -31,6 +31,8 @@ function flipCard(cardId) {
 }
 
 function checkForMatch() {
+    console.log("checkForMatch function is running!");
+
     // Get the card elements
     let firstCard = document.getElementById(firstCardId);
     let secondCard = document.getElementById(secondCardId);
@@ -47,8 +49,11 @@ function checkForMatch() {
         firstCard.style.backgroundColor = "chocolate";
         secondCard.style.color = "chocolate";
         secondCard.style.backgroundColor = "chocolate";
-        
     }
+    
+    guesses = guesses + 1;
+    let guessDisplay = document.getElementById("guessDisplay");
+    guessDisplay.innerText = guesses + " guesses";
 
     // Reset for next pick
     firstCardId = "";
